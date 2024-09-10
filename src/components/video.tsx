@@ -40,7 +40,7 @@ const VideoDemo: React.FC = () => {
           ) : (
             <>
               <img
-                src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                src={`https://i.ytimg.com/vi/ktsk3pbIYHA/maxresdefault.jpg`}
                 alt="Video thumbnail"
                 className="w-full"
               />
