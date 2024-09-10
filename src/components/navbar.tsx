@@ -16,7 +16,6 @@ export default function Navbar() {
             <NavItem href="#features">Features</NavItem>
             <NavItem href="#video">Video</NavItem>
             <NavItem href="#pricing">Pricing</NavItem>
-            <NavItem href="#footer">Contact</NavItem>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
