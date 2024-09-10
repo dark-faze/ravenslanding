@@ -60,6 +60,9 @@ export default {
     		aspectRatio: {
     			'w-16': '16',
     			'h-9': '9',
+    		},
+    		fontFamily: {
+    			sans: ['Inter', 'sans-serif'],
     		}
     	}
     },
