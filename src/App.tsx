@@ -1,14 +1,10 @@
+import Navbar from "./components/navbar";
 
-
-function App() {
-
+export default function LandingPage() {
   return (
-    <>
-      <h2 className="text-2xl font-bold"> 
-        Hello
-      </h2>
-    </>
+     <div>
+        <Navbar />
+     </div>
   )
 }
 
-export default App

@@ -6,7 +6,7 @@ export default {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-    	extend: {
+    extend: {
     		borderRadius: {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',
@@ -53,9 +53,18 @@ export default {
     				'4': 'hsl(var(--chart-4))',
     				'5': 'hsl(var(--chart-5))'
     			}
+    		},
+    		backgroundImage: {
+    			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+    		},
+    		aspectRatio: {
+    			'w-16': '16',
+    			'h-9': '9',
     		}
     	}
     },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/aspect-ratio'), // Add this line
+  ],
 }
-
