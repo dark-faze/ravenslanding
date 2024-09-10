@@ -12,7 +12,6 @@ export default function Navbar() {
           <span className="text-2xl font-bold text-white">MediumRaven 🐦‍⬛</span>
           </div>
           <div className="hidden md:flex space-x-6">
-            <NavItem href="#hero">Hero</NavItem>
             <NavItem href="#features">Features</NavItem>
             <NavItem href="#video">Video</NavItem>
             <NavItem href="#pricing">Pricing</NavItem>
@@ -26,11 +25,9 @@ export default function Navbar() {
         {isOpen && (
           <div className="mt-4 md:hidden">
             <div className="flex flex-col space-y-2">
-            <NavItem href="#hero" onClick={() => setIsOpen(false)}>Hero</NavItem>
               <NavItem href="#features" onClick={() => setIsOpen(false)}>Features</NavItem>
               <NavItem href="#video" onClick={() => setIsOpen(false)}>Video</NavItem>
               <NavItem href="#pricing" onClick={() => setIsOpen(false)}>Pricing</NavItem>
-              <NavItem href="#footer" onClick={() => setIsOpen(false)}>Contact</NavItem>
             </div>
           </div>
         )}
