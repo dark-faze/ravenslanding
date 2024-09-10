@@ -1,16 +1,15 @@
 import { useState } from 'react'
-import { Menu, X, Cpu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-gradient-to-r from-gray-900 to-purple-900 p-4 sticky top-0 z-50 shadow-lg">
+    <nav className="bg-transparent backdrop-blur-md bg-opacity-30 p-4 sticky top-0 z-50 shadow-lg transition-all duration-300">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Cpu className="h-8 w-8 text-purple-400" />
-            <span className="text-2xl font-bold text-white">AI Extension</span>
+          <span className="text-2xl font-bold text-white">MediumRaven 🐦‍⬛</span>
           </div>
           <div className="hidden md:flex space-x-6">
             <NavItem href="#hero">Hero</NavItem>
@@ -28,11 +27,11 @@ export default function Navbar() {
         {isOpen && (
           <div className="mt-4 md:hidden">
             <div className="flex flex-col space-y-2">
-              <MobileNavItem href="#hero" onClick={() => setIsOpen(false)}>Hero</MobileNavItem>
-              <MobileNavItem href="#features" onClick={() => setIsOpen(false)}>Features</MobileNavItem>
-              <MobileNavItem href="#video" onClick={() => setIsOpen(false)}>Video</MobileNavItem>
-              <MobileNavItem href="#pricing" onClick={() => setIsOpen(false)}>Pricing</MobileNavItem>
-              <MobileNavItem href="#footer" onClick={() => setIsOpen(false)}>Contact</MobileNavItem>
+            <a href="#hero" onClick={() => setIsOpen(false)}>Hero</a>
+              <a href="#features" onClick={() => setIsOpen(false)}>Features</a>
+              <a href="#video" onClick={() => setIsOpen(false)}>Video</a>
+              <a href="#pricing" onClick={() => setIsOpen(false)}>Pricing</a>
+              <a href="#footer" onClick={() => setIsOpen(false)}>Contact</a>
             </div>
           </div>
         )}
@@ -52,7 +51,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
   )
 }
 
-function MobileNavItem({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
+function a({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
   return (
     <a
       href={href}
