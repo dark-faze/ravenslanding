@@ -6,7 +6,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-transparent backdrop-blur-md bg-opacity-30 p-4 sticky top-0 z-50 shadow-lg transition-all duration-300">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
           <span className="text-2xl font-bold text-white">MediumRaven 🐦‍⬛</span>
@@ -27,11 +27,11 @@ export default function Navbar() {
         {isOpen && (
           <div className="mt-4 md:hidden">
             <div className="flex flex-col space-y-2">
-            <a href="#hero" onClick={() => setIsOpen(false)}>Hero</a>
-              <a href="#features" onClick={() => setIsOpen(false)}>Features</a>
-              <a href="#video" onClick={() => setIsOpen(false)}>Video</a>
-              <a href="#pricing" onClick={() => setIsOpen(false)}>Pricing</a>
-              <a href="#footer" onClick={() => setIsOpen(false)}>Contact</a>
+            <NavItem href="#hero" onClick={() => setIsOpen(false)}>Hero</NavItem>
+              <NavItem href="#features" onClick={() => setIsOpen(false)}>Features</NavItem>
+              <NavItem href="#video" onClick={() => setIsOpen(false)}>Video</NavItem>
+              <NavItem href="#pricing" onClick={() => setIsOpen(false)}>Pricing</NavItem>
+              <NavItem href="#footer" onClick={() => setIsOpen(false)}>Contact</NavItem>
             </div>
           </div>
         )}
@@ -40,23 +40,19 @@ export default function Navbar() {
   )
 }
 
-function NavItem({ href, children }: { href: string; children: React.ReactNode }) {
+function NavItem({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) {
   return (
     <a
       href={href}
+      onClick={(e) => {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (onClick) onClick();
+      }}
       className="text-gray-300 hover:text-white transition duration-300 ease-in-out transform hover:scale-110"
-    >
-      {children}
-    </a>
-  )
-}
-
-function a({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="text-gray-300 hover:text-white py-2 px-4 block rounded-md hover:bg-purple-800 transition duration-300 ease-in-out"
     >
       {children}
     </a>

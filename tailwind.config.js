@@ -56,6 +56,7 @@ export default {
     		},
     		backgroundImage: {
     			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+    			'hero-pattern': "url('/path-to-your-background-image.jpg')",
     		},
     		aspectRatio: {
     			'w-16': '16',
@@ -63,11 +64,17 @@ export default {
     		},
     		fontFamily: {
     			sans: ['Inter', 'sans-serif'],
+    		},
+    		animation: {
+    			'float': 'float 10s ease-in-out infinite',
+    		},
+    		keyframes: {
+    			float: {
+    				'0%, 100%': { transform: 'translateY(0)' },
+    				'50%': { transform: 'translateY(-20px)' },
+    			}
     		}
     	}
     },
-  plugins: [
-    require("tailwindcss-animate"),
-    require('@tailwindcss/aspect-ratio'), // Add this line
-  ],
+  plugins: [],
 }
